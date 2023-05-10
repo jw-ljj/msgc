@@ -4,7 +4,6 @@
 #main > div > ul {
   display: flex;
   flex-wrap: wrap;
-  height: 2500px;
 }
 #main > div > ul > li {
   width: calc((100% - 30px) / 4);
