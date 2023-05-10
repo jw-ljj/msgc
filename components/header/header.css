@@ -1,0 +1,42 @@
+#header {
+  background-color: #f75148;
+}
+#header > div {
+  align-items: center;
+}
+#header > div > img {
+  width: 160px;
+}
+#header > div .search {
+  background-color: white;
+  border-radius: 100px;
+  padding: 5px;
+  margin: 0 15px;
+}
+#header > div .search > input {
+  width: 150px;
+  border: none;
+  outline: none;
+  margin: 0 10px;
+  font-size: 1.2em;
+}
+#header > div .search > button {
+  width: 60px;
+  height: 35px;
+  color: white;
+  background-color: #f75148;
+  border-radius: 100px;
+}
+#header > div .nav > a {
+  padding: 30px 20px;
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 600;
+}
+#header > div .nav > a:hover {
+  background-color: #f8625b;
+}
+#header > div > .login {
+  margin-left: auto;
+  color: white;
+}/*# sourceMappingURL=header.css.map */

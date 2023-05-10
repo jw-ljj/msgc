@@ -1,0 +1,29 @@
+#main{
+  >div{
+    flex-direction: column;
+    >ul{
+      display: flex;
+      // flex-direction: column;
+
+      flex-wrap: wrap;
+      // column-count: 4;
+      // column-gap: 0;
+      height: 2500px;
+      >li{
+        width: calc((100% - 3 * 10px) / 4);
+        margin: 0 10px 10px 0;
+        // height: auto;
+        // height:fit-content;
+
+        &:nth-child(4n){
+          margin-right: 0;
+        }
+        >img{
+          width: 100%;
+          // height: auto;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+/* 为当前项目 个性化 提供的全局样式 */
+
+body{
+  min-width: 1000px;
+}
+
+.base-width{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.breadcrumb{
+  padding: 10px 0;
+}
+.breadcrumb>a{
+  color: #333;
+
+}

@@ -1,0 +1,48 @@
+/* 样式重置文件 */
+*,::after,::before{
+  box-sizing: border-box;
+}
+/* 防止幽灵空白节点 */
+img{
+  display: block;
+}
+
+html{
+  font-size: 16px;
+  color: #333;
+}
+
+/* 边框合并 */
+table{
+  border-collapse: collapse;
+}
+
+body,h1,h2,h3,h4,h5,h6,p,ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* button样式重置 */
+button{
+  border:none;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+button:active{
+  opacity: .8;
+}
+
+div{
+  display: flex;
+}
+
+

@@ -1,0 +1,38 @@
+#main {
+  background-color: #f6f6f6;
+}
+#main > div {
+  flex-direction: column;
+}
+#main > div > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#main > div > ul > li {
+  margin: 3px;
+  width: calc((100% - 20px) / 3);
+  position: relative;
+}
+#main > div > ul > li > span:nth-child(3) {
+  color: white;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 3px;
+  position: absolute;
+  left: 5px;
+  bottom: 45px;
+}
+#main > div > ul > li > span:nth-child(2) {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 3px;
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+#main > div > ul > li > p {
+  padding: 10px;
+}/*# sourceMappingURL=live.css.map */

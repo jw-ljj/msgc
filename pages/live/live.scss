@@ -1,0 +1,43 @@
+#main{
+  background-color: #f6f6f6;
+  >div{
+    flex-direction: column;
+    >ul{
+      display: flex;
+      flex-wrap: wrap; 
+      >li{
+        margin: 3px;
+        width: calc((100% - 2 * 10px) / 3);
+        position: relative;
+       
+        
+        >span:nth-child(3){
+          color: white;
+          display: block;
+          background-color: rgba(0,0,0,.4);
+          border-radius: 5px;
+          padding: 3px;
+          position: absolute;
+          left: 5px;
+          bottom: 45px;
+        }
+        >span:nth-child(2){
+          display: block;
+          background-color: rgba(0,0,0,.4);
+          border-radius: 5px;
+          padding: 3px;
+          color: white;
+
+          position: absolute;
+         
+          right: 10px;
+          top: 0;
+          
+        }
+        >p{
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

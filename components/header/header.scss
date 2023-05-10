@@ -1,0 +1,45 @@
+#header{
+  background-color: #f75148;
+  >div{
+  align-items: center;
+    >img{
+      width: 160px;
+    }
+    .search{
+      background-color: white;
+      border-radius: 100px;
+      padding: 5px;
+      margin: 0 15px;
+      >input{
+        width: 150px;
+        border: none;
+        outline: none;
+        margin:0 10px;
+        font-size: 1.2em;
+      }
+      >button{
+        width: 60px;
+        height: 35px;
+        color: white;
+        background-color: #f75148;
+        border-radius: 100px;
+      }
+    }
+    .nav{
+      >a{
+        padding: 30px 20px;
+        font-size: 1.4rem;
+        color: white;
+        font-weight: 600;
+        &:hover{
+          background-color: #f8625b;
+          // opacity: .8;
+        }
+      }
+    }
+    >.login{
+      margin-left: auto;
+      color: white;
+    }
+  }
+}
