@@ -1,1 +1,80 @@
-/*# sourceMappingURL=search.css.map */
+#main {
+  background-color: rgb(247, 247, 247);
+}
+#main > div {
+  display: flex;
+  flex-direction: column;
+}
+#main > div > .tj > span {
+  cursor: pointer;
+  margin: 0 5px;
+}
+#main > div > .tj > span.active {
+  color: orange;
+}
+#main > div > ul h2 {
+  text-align: center;
+  margin: 20px auto;
+}
+#main > div > ul h2 > span {
+  font-size: 1.5em;
+}
+#main > div > ul > li {
+  display: flex;
+  margin: 10px 0;
+  border: 1px dashed grey;
+  border-radius: 5px;
+}
+#main > div > ul > li > img {
+  border-radius: 5px;
+  width: 130px;
+  height: 130px;
+}
+#main > div > ul > li > div {
+  padding-left: 10px;
+  border-radius: 10px;
+  width: 860px;
+  margin-left: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#main > div > ul > li > div:hover {
+  box-shadow: 0 0 1px 2px grey;
+}
+#main > div > ul > li > div > p {
+  font-weight: 900;
+}
+#main > div > ul > li > div > p > span {
+  font-size: 1.4em;
+}
+#main > div > ul > li > div > span {
+  color: red;
+  font-size: 1.3em;
+}
+#main > div > ul > li > div > i {
+  color: grey;
+}
+#main > div > .pages {
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+#main > div > .pages > ul {
+  display: flex;
+}
+#main > div > .pages > ul > li {
+  margin: 0 5px;
+  border: 1px solid grey;
+  width: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 10px;
+}
+#main > div > .pages > ul > li.active {
+  color: white;
+  background-color: orange;
+}
+#main > div > .pages > button {
+  border: 1px solid grey;
+  border-radius: 5px;
+}/*# sourceMappingURL=search.css.map */

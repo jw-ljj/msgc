@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正则替换</title>
+</head>
+<body>
+  <h2 id="box"></h2>
+  <script>
+
+    // var words='abcd ABCD abcd ABCD'
+    // var x =words.replace('a','H')
+    // console.log(x);
+
+    // var words='abcd ABCD abcd ABCD'
+    // var x =words.replace(/a/gi,'H')
+    // console.log(x);
+
+    // var phone='13211651111'
+    // var reg=/(\d{3})(\d{4})(\d{4})/
+    // var y=phone.replace(reg,'$1-$2-$3')
+    // console.log(y);
+    // var w='这里是孙凯老师的课题'
+    // var z=w.replace(/孙凯/,'<span style="color:red">$&</span>')
+    // box.innerHTML=z
+    // console.log(z);
+
+    var w='这里是孙凯老师的课题'
+
+    // var  kw=prompt('请输入高亮内容：')
+    // console.log(r);
+    var r = new RegExp($.hash('kw'),'ig')
+    var xghname=name.replace(r,'<span style="color:green">$&</span>')
+    box.innerHTML=z
+  </script>
+
+
+
+</body>
+</html>

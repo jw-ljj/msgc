@@ -13,7 +13,10 @@
     <div id="main"></div>
     <div id="footer"></div>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="common/js/common.js"></script>
+
     <script>
+      console.dir($);
       $("#header").load("./components/header/header.html", () => {
         changePage();
       });

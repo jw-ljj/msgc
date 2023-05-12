@@ -35,4 +35,49 @@
 }
 #main > div > ul > li > p {
   padding: 10px;
+}
+#main > div > button {
+  height: 36px;
+  font-size: 30px;
+  margin: 10px auto 20px;
+  background-color: lightblue;
+  height: 50px;
+  line-height: 1em;
+  border-radius: 20px;
+  width: 80%;
+}
+#main > div > button:active {
+  background-color: grey;
+  color: white;
+  box-shadow: 0 0 10px 1px black;
+}
+#main > div > .pages {
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+#main > div > .pages > ul {
+  display: flex;
+}
+#main > div > .pages > ul > li {
+  width: 36px;
+  line-height: 36px;
+  background-color: white;
+  text-align: center;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+#main > div > .pages > ul > li.active {
+  color: white;
+  background-color: orange;
+}
+#main > div > .pages > ul > button {
+  background-color: lightgrey;
+  height: 36px;
+  border-radius: 10px;
+  width: 70px;
+}
+#main > div > .pages > ul > button:active {
+  opacity: 0.6;
+  background-color: grey;
+  box-shadow: 0 0 2px 2px lightblue;
 }/*# sourceMappingURL=live.css.map */
