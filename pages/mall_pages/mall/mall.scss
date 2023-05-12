@@ -41,6 +41,36 @@
         }
       }
     }
-   
+    >.pages{
+      justify-content: center;
+      $width:36px;
+      margin: 10px 0 20px;
+      >ul{
+        display: flex;
+        >li{
+          width: $width;
+          line-height: $width;
+          text-align: center;
+          margin: 0 5px;
+          border-radius: 5px;
+          background-color: white;
+          &.active{
+            color: white;
+            background-color: orange;
+          }
+        }
+      }
+      >button{
+        height: $width;
+        width: 70px;
+        background-color: #fff;
+        border-radius: 5px;
+        &:active{
+          opacity: 0.6;
+          background-color: lightblue;
+          box-shadow: 0 0 2px 2px grey;
+        }
+      }
+    }
   }
 }

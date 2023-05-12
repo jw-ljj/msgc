@@ -1,1 +1,69 @@
-/*# sourceMappingURL=home.css.map */
+#main > div {
+  flex-direction: column;
+}
+#main > div > .top {
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0 20px;
+}
+#main > div > .top > a {
+  color: white;
+  text-align: center;
+  width: 170px;
+  height: 40px;
+  line-height: 40px;
+  background-color: orange;
+  font-size: 1.5em;
+  border-radius: 50px;
+  font-weight: 600;
+}
+#main > div > .top-video > ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#main > div > .top-video > ul > li {
+  position: relative;
+  width: calc((100% - 30px) / 4);
+}
+#main > div > .top-video > ul > li > img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px grey;
+}
+#main > div > .top-video > ul > li > p {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 900;
+  position: relative;
+  top: -40px;
+  left: 10px;
+}
+#main > div > .top-video > ul > li > span {
+  display: block;
+  border: 40px solid transparent;
+  border-left: 60px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+#main > div > .today-hot {
+  flex-direction: column;
+}
+#main > div > .today-hot > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#main > div > .today-hot > ul > li {
+  border-radius: 10px;
+  text-align: center;
+  line-height: 1.3em;
+  margin: 5px;
+  padding: 3px 10px;
+  background-color: lightgrey;
+}
+#main > div > .today-hot > ul > li.active {
+  color: orangered;
+  background-color: lightblue;
+}/*# sourceMappingURL=home.css.map */
