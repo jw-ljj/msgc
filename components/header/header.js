@@ -14,5 +14,9 @@ $(function(){
     const kw=$('.search>input').val()
     location.hash='#p=search&kw='+kw
   })
+
+  setInterval(() => {
+  $('.base-width>img').toggleClass('active')    
+  }, 2000);
   
 })

@@ -7,6 +7,26 @@
 #header > div > img {
   width: 160px;
 }
+#header > div > img.active {
+  animation: logomove 2s;
+}
+@keyframes logomove {
+  0% {
+    transform: scale(1, 1);
+  }
+  45% {
+    transform: scale(1.2, 0.6);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  65% {
+    transform: scale(1.2, 0.6);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
 #header > div .search {
   background-color: white;
   border-radius: 100px;
@@ -28,7 +48,7 @@
   border-radius: 100px;
 }
 #header > div .nav > a {
-  padding: 30px 20px;
+  padding: 20px 10px;
   font-size: 1.4rem;
   color: white;
   font-weight: 600;
@@ -39,4 +59,19 @@
 #header > div > .login {
   margin-left: auto;
   color: white;
+}
+#header > div > .user {
+  margin-left: auto;
+  align-items: center;
+  width: 60px;
+}
+#header > div > .user > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+#header > div > .user > span {
+  margin-left: 5px;
+  color: white;
+  line-height: 70px;
 }/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    #cz{
+      width: 1000px;  
+      margin: 100px auto;
+      border: 1px solid red;
+
+    }
+    #btns{
+      width: 200px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    #b{
+      position: absolute;
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div id="cz">
+    <h1>辞职信</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium pariatur, rerum ad dolorem odio deserunt architecto mollitia maxime sit doloribus excepturi esse, modi repudiandae! Tenetur minus aspernatur quos illo error.
+    </p>
+    <br><br><br>
+    <div id="btns">
+      <button>同意</button>
+      <button id="b">不同意</button>
+    </div>
+  </div>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    $('#b').mouseover(function(){
+      console.log(parseInt(Math.random()*100));
+
+      $(this).css('top',parseInt(Math.random()*100)+'vh')
+      $(this).css('left',parseInt(Math.random()*100)+'vw')
+    })
+  </script>
+</body>
+</html>

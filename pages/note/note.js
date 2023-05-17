@@ -1,16 +1,29 @@
 $(function(){
+  function getBottom(el){
+    const top =$(el).css('top')
+    const height =$(el).height()
+    return parseInt(top)+height
+  }
 
   function getData(p){
 
     var url=`https://serverms.xin88.top/note?page=`+p
   $.get(url,data=>{
     // console.log(data);
+    const li_w=242.5
+    const space=10
 
     $('#note-items').html(
       data.data.map(value=>{
-        const {cover,favorite,head_icon,title,name}=value
+        const {cover,favorite,head_icon,title,name
+        ,width,height
+        }=value
+
+        const img_h=li_w / width * height
+        // console.log(img_h);
+
         return ` <li>
-        <img src="assets/img/note/${cover}" alt="">
+        <img style="height:${img_h}px" src="assets/img/note/${cover}" alt="">
         <p class="lh">${title}</p>
         <div>
           <div>
@@ -22,6 +35,49 @@ $(function(){
       </li>`
       })
     )
+
+    const arr=[]
+
+    $('#note-items>li').each((i,el)=>{
+      // el元素,i序号
+      // console.log(i,el);
+      if(i<4){
+        $(el).css({top:0,left:i * (li_w + space)})
+        arr.push(el)
+      }else{ 
+        let min_el =arr[0]
+        for(let i=1;i<arr.length;i++){
+          if(getBottom(arr[i])<getBottom(min_el)){
+            min_el=arr[i]
+          }
+        }
+        // console.log(min_el);
+        $(el).css({
+          left:$(min_el).css('left'),
+          top:getBottom(min_el)+space
+        })
+        const index_min=arr.indexOf(min_el)
+        // console.log(index_min);
+        arr.splice(index_min,1,el)
+        // console.log(arr);
+      
+
+
+      }
+    
+    })
+
+
+    let max_el=arr[0]
+    for(let i=0;i<arr.length;i++){
+      if(getBottom(arr[i])>getBottom(max_el)){
+        max_el=arr[i]
+      }
+    }
+    $('#note-items').css('height',getBottom(max_el))
+    // console.log($('#note-items').css('height'));
+
+
     const {page,pageCount}=data
     let start =page-2
      let end =page+2
@@ -57,6 +113,7 @@ $(function(){
   $('.pages>ul').on('click','>li',function(){
     // console.log($(this).html());
     getData($(this).html())
+
     // $(this).addClass('active').siblings().removeClass('active')
     
   })

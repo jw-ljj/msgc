@@ -4,18 +4,47 @@
     <a href="#p=menu">更多视频菜谱</a>
   </div>
   <div class="top-video">
-    <ul>
-    
-    </ul>
+    <ul></ul>
   </div>
   <div class="today-hot">
-    <h1> 今日热搜</h1>
-    <ul>
-      
-    </ul>
-   
+    <h1>今日热搜</h1>
+    <ul></ul>
   </div>
-  <div class="list">
-    123
+  <div class="today-meal">
+    <div class="menu">
+      <h1>今日三餐</h1>
+      <ul></ul>
+    </div>
+    <div class="banner"></div>
+    <div class="contents">
+      <div class="content swiper">
+        <ul class="swiper-wrapper"></ul>
+      </div>
+    </div>
+    <div class="lists">
+      <div class="list1"></div>
+      <div class="list2"></div>
+      <div class="list3"></div>
+      <div class="list4"></div>
+      <div class="list5"></div>
+    </div>
   </div>
 </div>
+<script>
+  var mySwiper = new Swiper(".swiper", {
+    // loop: true,
+    slidesPerView : 3,
+    slidesPerGroup : 3,
+		spaceBetween:10,
+    on:{
+      slideChange(){
+        console.log(this.activeIndex);
+        $('.menu>ul>li').eq(this.activeIndex/3).click()
+      }
+    }
+   
+   
+   
+   
+  });
+</script>

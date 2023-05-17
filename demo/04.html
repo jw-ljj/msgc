@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/swiper/swiper-bundle.min.css"
+    />
+    <script src="../node_modules/swiper/swiper-bundle.min.js"></script>
+    <style>
+      .swiper {
+        width: 600px;
+        height: 300px;
+        border: 1px solid red;
+      }
+      .swiper {
+        --swiper-theme-color: #ff6600;
+        --swiper-pagination-color: #00ff33; /* 两种都可以 */
+      }
+      .my-bullet{
+        background-color: #EEE;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 4px;
+      }
+      .my-bullet-active{
+        background-color: orangered;
+      }
+    </style>
+    <title>swiper</title>
+  </head>
+  <body>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../assets/img/index/11.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../assets/img/index/22.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="../assets/img/index/33.jpg" alt="" />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <!--分页器。如果放置在swiper外面，需要自定义样式。-->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <script>
+      var mySwiper = new Swiper(".swiper", {
+        loop: true,
+        autoplay: {
+          delay: 1000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+        effect: "cube",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable :true,
+
+          bulletClass:"my-bullet",
+          bulletActiveClass:"my-bullet-active"
+        }, 
+      });
+    </script>
+  </body>
+</html>

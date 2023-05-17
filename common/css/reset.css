@@ -3,8 +3,9 @@
   box-sizing: border-box;
 }
 /* 防止幽灵空白节点 */
-img{
+img,video{
   display: block;
+  object-fit: cover;
 }
 
 html{

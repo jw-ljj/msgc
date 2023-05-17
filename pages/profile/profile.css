@@ -1,1 +1,23 @@
-/*# sourceMappingURL=profile.css.map */
+#main > div > .zuo {
+  flex-direction: column;
+  margin-bottom: 200px;
+}
+#main > div > .zuo > ul > li {
+  padding: 5px;
+  width: 100px;
+  margin: 10px;
+  background-color: lightblue;
+  border-radius: 5px;
+  text-align: center;
+}
+#main > div > .zuo > ul > li.active {
+  background-color: orange;
+  color: white;
+}
+#main > div > .you {
+  margin: 45px 40px;
+  flex-direction: column;
+}
+#main > div > .you > div {
+  display: none;
+}/*# sourceMappingURL=profile.css.map */

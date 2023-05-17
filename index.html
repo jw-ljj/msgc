@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="common/css/reset.css" />
     <link rel="stylesheet" href="common/css/base.css" />
     <title>美食广场</title>
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div id="header"></div>
@@ -16,13 +23,16 @@
     <script src="common/js/common.js"></script>
 
     <script>
-      console.dir($);
+      // console.log();
+      // console.dir($);
       $("#header").load("./components/header/header.html", () => {
         changePage();
       });
       // $("#main").load(`./pages/home/home.html`);
+      // $("#footer").load("./components/footer/footer.html");
 
-      $("#footer").load("./components/footer/footer.html");
+      // let tjp= new URLSearchParams(location.hash.substr(1)).get("p")
+      // console.log(tjp);
 
       addEventListener("hashchange", changePage);
 
@@ -33,6 +43,13 @@
         // p为空 值默认"home"
         const p = params.get("p") || "home";
         // console.log(p);
+
+        if (p == "login") {
+          $("#footer").load("./components/footer/footer2.html");
+        } else {
+          $("#footer").load("./components/footer/footer.html");
+        }
+
         $("#main").load(`./pages/${p}/${p}.html`, function () {
           $(this).append(
             `  <link rel="stylesheet" href="pages/${p}/${p}.css"> `

@@ -10,13 +10,17 @@
       // column-count: 4;
       // column-gap: 0;
       // height: 2400px;
+      position: relative;
       >li{
+        position: absolute;
         width: calc((100% - 3 * 10px) / 4);
         margin: 0 10px 10px 0;
         // height: auto;
         // height:fit-content;
         background-color: white;
         box-shadow: 0 0 2px 2px rgba(0,0,0,.1);
+        border-radius: 20px;
+
 
         &:nth-child(4n){
           margin-right: 0;

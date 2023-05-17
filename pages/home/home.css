@@ -23,11 +23,19 @@
   justify-content: space-between;
 }
 #main > div > .top-video > ul > li {
+  border-radius: 10px;
+  height: 521px;
   position: relative;
   width: calc((100% - 30px) / 4);
+  margin: 0 10px;
+  overflow: hidden;
 }
-#main > div > .top-video > ul > li > img {
-  width: 100%;
+#main > div > .top-video > ul > li.active {
+  transition: 0.5s;
+  width: calc((100% - 30px) / 4 + 180px);
+}
+#main > div > .top-video > ul > li > img, #main > div > .top-video > ul > li video {
+  width: 340px;
   border-radius: 10px;
   box-shadow: 0 0 10px 1px grey;
 }
@@ -35,14 +43,15 @@
   color: white;
   font-size: 1.2em;
   font-weight: 900;
-  position: relative;
-  top: -40px;
-  left: 10px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
 }
 #main > div > .top-video > ul > li > span {
   display: block;
   border: 40px solid transparent;
-  border-left: 60px solid rgba(255, 255, 255, 0.7);
+  border-left: 60px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   position: absolute;
   top: 40%;
@@ -54,6 +63,7 @@
 #main > div > .today-hot > ul {
   display: flex;
   flex-wrap: wrap;
+  width: 680px;
 }
 #main > div > .today-hot > ul > li {
   border-radius: 10px;
@@ -66,4 +76,190 @@
 #main > div > .today-hot > ul > li.active {
   color: orangered;
   background-color: lightblue;
+}
+#main > div > .today-meal {
+  flex-direction: column;
+  position: relative;
+}
+#main > div > .today-meal > .menu > ul {
+  margin-left: 20px;
+  display: flex;
+}
+#main > div > .today-meal > .menu > ul > li {
+  font-weight: 900;
+  color: grey;
+  background-color: lightgrey;
+  border-radius: 20px;
+  text-align: center;
+  height: 40px;
+  font-size: 1.5em;
+  line-height: 40px;
+  width: 90px;
+  margin: 0 5px;
+}
+#main > div > .today-meal > .menu > ul > li.active {
+  color: white;
+  background-color: orangered;
+}
+#main > div > .today-meal > .banner {
+  overflow: hidden;
+  position: absolute;
+  top: -115px;
+  right: 0;
+  width: 300px;
+  height: 520px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+#main > div > .today-meal > .banner.active > .bg {
+  animation: bgmove 3s alternate;
+}
+#main > div > .today-meal > .banner.active > .hand {
+  animation: handmove 3s alternate;
+}
+@keyframes bgmove {
+  0% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  25% {
+    filter: blur(2px);
+    transform: scale(1.5);
+  }
+  75% {
+    filter: blur(2px);
+    transform: scale(1.5);
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+@keyframes handmove {
+  0% {
+    transform: translateX(50%) rotate(45deg);
+  }
+  25% {
+    transform: translateX(0%) rotate(0deg);
+  }
+  75% {
+    transform: translateX(0%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(50%) rotate(45deg);
+  }
+}
+#main > div > .today-meal > .banner > .desc {
+  position: absolute;
+  top: 450px;
+  left: 90px;
+  color: white;
+  flex-direction: column;
+  text-align: center;
+}
+#main > div > .today-meal > .banner > .bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+#main > div > .today-meal > .banner > .hand {
+  width: 200px;
+  height: 218px;
+  z-index: 1;
+  position: absolute;
+  top: 35%;
+  right: 0;
+  transform-origin: right bottom;
+  transform: translateX(50%) rotate(45deg);
+}
+#main > div > .today-meal > .contents {
+  width: 680px;
+  overflow: hidden;
+}
+#main > div > .today-meal > .contents > .content {
+  margin: 10px 0 20px;
+  width: 680px;
+  transition: 0.6s;
+}
+#main > div > .today-meal > .contents > .content > ul {
+  display: flex;
+}
+#main > div > .today-meal > .contents > .content > ul > li {
+  width: calc((100% - 20px) / 3);
+  margin: 0 7px 0 0;
+}
+#main > div > .today-meal > .contents > .content > ul > li > img {
+  width: 220px;
+  height: 292px;
+  border-radius: 10px;
+}
+#main > div > .today-meal > .contents > .content > ul > li > p {
+  font-weight: 900;
+  font-size: 1.1em;
+  margin: 2px 5px 0 3px;
+}
+#main > div > .today-meal > .lists {
+  flex-direction: column;
+}
+#main > div > .today-meal > .lists > .list1, #main > div > .today-meal > .lists .list2, #main > div > .today-meal > .lists .list3, #main > div > .today-meal > .lists .list4, #main > div > .today-meal > .lists .list5 {
+  flex-direction: column;
+  margin: 0 0 20px 0;
+}
+#main > div > .today-meal > .lists > .list1 > ul, #main > div > .today-meal > .lists .list2 > ul, #main > div > .today-meal > .lists .list3 > ul, #main > div > .today-meal > .lists .list4 > ul, #main > div > .today-meal > .lists .list5 > ul {
+  margin-top: 10px;
+  display: flex;
+}
+#main > div > .today-meal > .lists > .list1 > ul > li, #main > div > .today-meal > .lists .list2 > ul > li, #main > div > .today-meal > .lists .list3 > ul > li, #main > div > .today-meal > .lists .list4 > ul > li, #main > div > .today-meal > .lists .list5 > ul > li {
+  width: calc((100% - 40px) / 5);
+  margin: 0 10px 0 0;
+}
+#main > div > .today-meal > .lists > .list1 > ul > li > div, #main > div > .today-meal > .lists .list2 > ul > li > div, #main > div > .today-meal > .lists .list3 > ul > li > div, #main > div > .today-meal > .lists .list4 > ul > li > div, #main > div > .today-meal > .lists .list5 > ul > li > div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#main > div > .today-meal > .lists > .list1 > ul > li > div:hover > p, #main > div > .today-meal > .lists .list2 > ul > li > div:hover > p, #main > div > .today-meal > .lists .list3 > ul > li > div:hover > p, #main > div > .today-meal > .lists .list4 > ul > li > div:hover > p, #main > div > .today-meal > .lists .list5 > ul > li > div:hover > p {
+  transition: 0.5s;
+  transform: translateY(-22px);
+}
+#main > div > .today-meal > .lists > .list1 > ul > li > div:hover + span, #main > div > .today-meal > .lists .list2 > ul > li > div:hover + span, #main > div > .today-meal > .lists .list3 > ul > li > div:hover + span, #main > div > .today-meal > .lists .list4 > ul > li > div:hover + span, #main > div > .today-meal > .lists .list5 > ul > li > div:hover + span {
+  color: red;
+}
+#main > div > .today-meal > .lists > .list1 > ul > li > div > img, #main > div > .today-meal > .lists .list2 > ul > li > div > img, #main > div > .today-meal > .lists .list3 > ul > li > div > img, #main > div > .today-meal > .lists .list4 > ul > li > div > img, #main > div > .today-meal > .lists .list5 > ul > li > div > img {
+  width: 100%;
+  height: 240px;
+  border-radius: 10px;
+}
+#main > div > .today-meal > .lists > .list1 > ul > li > div > p, #main > div > .today-meal > .lists .list2 > ul > li > div > p, #main > div > .today-meal > .lists .list3 > ul > li > div > p, #main > div > .today-meal > .lists .list4 > ul > li > div > p, #main > div > .today-meal > .lists .list5 > ul > li > div > p {
+  width: 190px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  position: absolute;
+  bottom: -22px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#main > div > .today-meal > .lists > .list1 > ul > li > i, #main > div > .today-meal > .lists .list2 > ul > li > i, #main > div > .today-meal > .lists .list3 > ul > li > i, #main > div > .today-meal > .lists .list4 > ul > li > i, #main > div > .today-meal > .lists .list5 > ul > li > i {
+  width: 100%;
+  overflow: hidden;
+  height: 1.1em;
+  line-height: 1em;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+#main > div > .today-meal > .lists > .list1 > ul > li > i::before, #main > div > .today-meal > .lists .list2 > ul > li > i::before, #main > div > .today-meal > .lists .list3 > ul > li > i::before, #main > div > .today-meal > .lists .list4 > ul > li > i::before, #main > div > .today-meal > .lists .list5 > ul > li > i::before {
+  content: "";
+  display: inline-block;
+  background-image: url(../../assets/img/453.png);
+  background-size: 30px;
+  width: 20px;
+  height: 16px;
+  flex: none;
+  background-position: 0px -61px;
+}
+#main > div > .today-meal > .lists > .list1 > ul > li span, #main > div > .today-meal > .lists .list2 > ul > li span, #main > div > .today-meal > .lists .list3 > ul > li span, #main > div > .today-meal > .lists .list4 > ul > li span, #main > div > .today-meal > .lists .list5 > ul > li span {
+  font-weight: 900;
+  font-size: 1em;
 }/*# sourceMappingURL=home.css.map */

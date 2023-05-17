@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../node_modules/animate.css/animate.min.css" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      #h1 {
+        text-align: center;
+
+        margin: 10vh auto;
+        width: 500px;
+        /* height: 400px; */
+        background: lightblue;
+        animation: move 1s;
+      }
+      .box {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+        background-color: skyblue;
+        /* animation: divmove 1s; */
+      }
+      .box > input,
+      .box > button {
+        width: 70%;
+        margin: 10px 20px;
+      }
+      .box > div {
+        width: 65%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @keyframes divmove {
+        0% {
+          transform: translateY(1000px);
+        }
+        100% {
+          transform: translateY(px);
+        }
+      }
+
+      @keyframes move {
+        0% {
+          opacity: 0;
+          transform: translateY(-1000px) scale(0.6);
+          /* transform:; */
+          opacity: 0.5;
+        }
+        80% {
+          opacity: 1;
+          transform: scale(0.6);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+
+          transform: translateY(0px);
+        }
+      }
+      #msg {
+        width: 70%;
+        height: 20px;
+        margin: 0 auto;
+      }
+      #da{
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="h1">
+      <h1>欢迎来到美食广场</h1>
+    </div>
+    <div class="box">
+      <h2>账号密码登录</h2>
+      <input type="text" maxlength="11" placeholder="请输入账号..." />
+      <br />
+      <input type="password" maxlength="12" placeholder="请输入密码..." />
+      <div id="msg"></div>
+      <div>
+        <div id="da">
+          <input id="gou" type="checkbox" />
+          <label for="gou">下次自动登录</label>
+        </div>
+        <div>
+          <a href="">忘记密码</a>
+          <a href="">立即注册</a>
+        </div>
+      </div>
+      <button>登录</button>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      $(".box").addClass("animate__animated animate__rollIn");
+      $("[type=password]").blur(function () {
+        if($(this).val().length==0) return
+        // console.log(1);
+        // console.log($('[type=password]').val().length);
+        if ($("[type=password]").val().length < 3) {
+          $("#msg").html("长度必须6~12位之间").css("color", "red");
+        } else {
+          $("#msg").html("密码格式正确").css("color", "green");
+         
+        }
+      });
+
+
+
+      // console.log($("[type=checkbox]").prop("checked"));
+
+      $("button").attr("disabled",!$("[type=checkbox]").prop("checked"));
+      $("[type=checkbox]").on('change',function(){
+        // console.log(1);
+        $("button").attr("disabled",!$("[type=checkbox]").prop("checked"));
+      })
+     
+
+      $("button").click(function () {
+        // console.log($('[type=checkbox]').prop('checked'));
+        if (!$("[type=checkbox]").prop("checked")) {
+          $("#da").addClass("animate__animated animate__heartBeat");
+          $("#da").css("color", "red");
+          setTimeout(() => {
+            $("#da").removeClass("animate__animated animate__heartBeat");
+            $("#da").css("color", "black");
+          }, 1000);
+        }
+      });
+    </script>
+  </body>
+</html>

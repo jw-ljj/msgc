@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频</title>
+  <style>
+    #videos{
+      display: flex;
+      width: 1620px;
+      /* flex-direction:column ; */
+      height: 650px;
+      border: 2px solid red;
+    }
+    .video{
+      overflow: hidden;
+      display: inline-block;
+
+      width: 380px;
+      height: 500px;
+      margin:  5px 10px;
+      /* flex-grow:1; */
+      /* flex: 1 0; */
+      
+      height: 600px;
+      object-fit: cover;
+    }
+    .video.active{
+      width: 600px;
+      /* transform: scaleX(1.5); */
+      transition: 1s;
+    }
+    video{
+      
+      width: 600px;
+      object-fit: cover;
+    }
+
+  </style>
+</head>
+<body> 
+  <!-- poster="../assets/img/index/11.jpg" -->
+  <!-- <div id="videos"> -->
+    <div class="video">
+      <video  preload="" src="../assets/video/11.mp4"></video>
+    </div>
+    <div class="video">
+      <video  preload="" src="../assets/video/22.mp4"></video>
+    </div>
+    <div  class="video">
+      <video  preload="" src="../assets/video/33.mp4"></video>
+    </div>
+    <div class="video">
+      <video  preload="" src="../assets/video/44.mp4"></video>
+    </div>
+  
+  <!-- </div> -->
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $('.video').click(function(){
+      // $(this).trigger('play')
+      $(this).toggleClass('active').siblings().removeClass('active')
+      $(this).children().trigger('play')
+      $('.video:not(.active)>video').trigger('pause')
+      // this.play()
+      $(this).children().prop('muted',true)
+    })
+    // $('.video').mouseout(function(){
+    //   $(this).trigger('pause')
+    //   // this.pause()
+    //   $(this).prop('currentTime',0)
+    //   $(this).removeClass('active')
+
+      // this.currentTime=0
+    // })
+  </script>
+</body>
+</html>
