@@ -14,6 +14,8 @@
     />
     <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
     <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+     <script src="../node_modules/moment/moment.js"></script>
+
   </head>
   <body>
     <div id="header"></div>
@@ -40,9 +42,11 @@
         const h = location.hash.substr(1);
         // console.log({h});
         const params = new URLSearchParams(h);
+        // console.log( params);
         // p为空 值默认"home"
         const p = params.get("p") || "home";
         // console.log(p);
+        // $('.lohin').eq(0).siblings
 
         if (p == "login") {
           $("#footer").load("./components/footer/footer2.html");

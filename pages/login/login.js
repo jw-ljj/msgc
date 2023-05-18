@@ -62,21 +62,56 @@ $(function(){
     }else{
       let uname=$(this).parent().children('input').eq(0).val();
       let upwd=$(this).parent().children('input').eq(1).val();
-      console.log(uname,upwd);
+      // console.log(uname,upwd);
 
       var url=`https://serverms.xin88.top/users/login`
       $.post(url,{phone:uname,pwd:upwd},function(data){
-				console.log(data);
+				// console.log(data);
 				if(data.code==200){
-					alert(data.msg)
-					location.href='#p=home'
+					// alert(data.msg)
+					 const user = JSON.stringify(data.data)
+					  sessionStorage.setItem('user', user)
+						
+					// sessionStorage.setItem('user',user)
+					location.assign("#p=home")
+					location.reload("#p=home")
+					window.updateuser()
+					// location.reload('#p=home')
+					
+					
+					// let user = sessionStorage.getItem('user') || localStorage.getItem('user')
+					//  if (user) {
+					//    $('.login').hide().next().show()
+					//    user = JSON.parse(user)
+					// 			console.log(user);
+					//    const { avatar, phone } = user
+					//    $('.user>span').html(phone)
+					// 			$('.user>img').attr('src',avatar);
+								
+					//  } else {
+					//    $('.login').show().next().hide()
+					//  }
+					
+					
+					// location.href='#p=home'
+					
+					// let userinfo=JSON.parse(sessionStorage.getItem('user'))
+					// let tj=sessionStorage.getItem('user')||localStorage.getItem('user')
+					// console.log(tj);
+					// if(tj){
+					// 	$('.login').hide().next().show()
+					// 	$('.user>span').html(userinfo.phone)
+					// }else{
+					// 	$('.login').show().next().hide()
+					// }
+					
 					console.log($('a').filter('[class="login"]'));
-					$('a').filter('[class="login"]').css('display','none')
-					// $('a')
-					$('#header>.base-width').append(`	<div onclick="location.assign('#p=profile')" class="user">
-		<img src="${data.data.avatar}" alt="">
-		<span>${data.data.phone}</span>
-	</div>`)
+					
+					 
+	// 				$('#header>.base-width').append(`	<div onclick="location.assign('#p=profile')" class="user">
+	// 	<img src="${userinfo.avatar}" alt="">
+	// 	<span>${userinfo.phone}</span>
+	// </div>`)
 				}
 			},"json")
         // console.log(data);

@@ -1,4 +1,5 @@
 #main > div > .zuo {
+  width: 130px;
   flex-direction: column;
   margin-bottom: 200px;
 }
@@ -19,5 +20,56 @@
   flex-direction: column;
 }
 #main > div > .you > div {
+  flex-direction: column;
+}
+#main > div > .you > div:nth-child(2) > img {
+  margin: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+#main > div > .you > div:nth-child(2) > button {
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: orangered;
+  color: white;
+  line-height: 30px;
+  text-align: center;
+}
+#main > div > .you > div:nth-child(2) > div {
+  overflow: auto;
+  width: 730px;
+  height: 365px;
+  margin-top: 10px;
+}
+#main > div > .you > div:nth-child(2) > div > .lists {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#main > div > .you > div:nth-child(2) > div > .lists > li {
+  margin: 5px;
+}
+#main > div > .you > div:nth-child(2) > div > .lists > li > img {
+  width: 60px;
+  height: 60px;
+}
+#main > div > .you > div:nth-child(7) > button {
+  margin-top: 50px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: orangered;
+  color: white;
+  line-height: 30px;
+  text-align: center;
+}
+
+#footer {
   display: none;
+  position: fixed;
+  left: 20vw;
+  bottom: 0vh;
 }/*# sourceMappingURL=profile.css.map */
